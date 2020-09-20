@@ -66,3 +66,62 @@ a:visited {
 a:hover {
     text-decoration-color: black;
 }
+
+.register form {
+    margin-top: 1rem;
+}
+
+.register input {
+    display: inline-block;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+    display: block;
+    height: 1.5rem;
+    font-size: 1rem;
+}
+
+.registerButton {
+    width: 8rem;
+}
+
+.login form {
+    margin-top: 1rem;
+}
+
+.login input {
+    display: inline-block;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+    display: block;
+    height: 1.5rem;
+    font-size: 1rem;
+}
+
+.loginButton {
+    width: 8rem;
+}
+
+.reports form{
+    margin-top: 1rem;
+}
+
+.reports input {
+    display: inline-block;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+    display: block;
+    height: 1.5rem;
+    font-size: 1rem;
+}
+
+textarea {
+    min-height: 20rem;
+    width: 40rem;
+    resize: none;
+    margin-bottom: 1rem;
+}
+
+select {
+    display: block;
+    margin-bottom: 1rem;
+}
