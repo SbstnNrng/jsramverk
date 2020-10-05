@@ -12,7 +12,7 @@ let browser;
 
 test.describe("My-App", function() {
     test.beforeEach(function(done) {
-        this.timeout(20000);
+        this.timeout(200000);
         browser = new webdriver.Builder().
             withCapabilities(webdriver.Capabilities.firefox()).build();
 
