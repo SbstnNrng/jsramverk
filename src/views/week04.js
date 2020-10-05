@@ -1,13 +1,13 @@
 import React from 'react';
 
-class Week01 extends React.Component {
+class Week04 extends React.Component {
     state = {
         title: null,
         info: null
     };
 
     async componentDidMount() {
-        const url = "https://my-api.jsram.me/reports/week/1";
+        const url = "https://my-api.jsram.me/reports/week/4";
         const response = await fetch(url);
         const result = await response.json();
         this.setState({ info: result.data.info, title: result.data.title });
@@ -25,4 +25,4 @@ class Week01 extends React.Component {
     }
 }
 
-export default Week01;
+export default Week04;

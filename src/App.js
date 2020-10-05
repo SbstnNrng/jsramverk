@@ -8,6 +8,8 @@ import Reports from './views/reports.js';
 import Edit from './views/edit.js';
 import week01 from './views/week01.js';
 import week02 from './views/week02.js';
+import week03 from './views/week03.js';
+import week04 from './views/week04.js';
 
 import './App.css';
 
@@ -39,6 +41,12 @@ class App extends React.Component {
                         <li>
                         <Link to="/reports/week/2">kmom2</Link>
                         </li>
+                        <li>
+                        <Link to="/reports/week/3">kmom3</Link>
+                        </li>
+                        <li>
+                        <Link to="/reports/week/4">kmom4</Link>
+                        </li>
                     </ul>
                     </nav>
                     <Route exact path="/login" component={Login} />
@@ -48,6 +56,8 @@ class App extends React.Component {
                     <Route exact path="/edit" component={Edit} />
                     <Route exact path="/reports/week/1" component={week01} />
                     <Route exact path="/reports/week/2" component={week02} />
+                    <Route exact path="/reports/week/3" component={week03} />
+                    <Route exact path="/reports/week/4" component={week04} />
                 </div>
             </Router>
         )

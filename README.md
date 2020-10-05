@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/Skwoat/jsramverk.svg?branch=master)](https://travis-ci.org/github/Skwoat/jsramverk)
+[![Build Status](https://scrutinizer-ci.com/g/Skwoat/jsramverk/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/Skwoat/jsramverk/?branch=master)
+
 INSTALL and RUN react app:
 
 run these commands

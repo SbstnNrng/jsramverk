@@ -7,7 +7,7 @@ class Me extends React.Component {
     };
 
     async componentDidMount() {
-        const url = "http://localhost:1337/";
+        const url = "https://my-api.jsram.me/";
         const response = await fetch(url);
         const result = await response.json();
         this.setState({ info: result.data.info, title: result.data.title });

@@ -12,10 +12,11 @@ export default class Login extends React.Component {
     
     handleSubmit = (event) => {
         const that = this;
-        fetch('http://localhost:1337/login', {
+        fetch('https://my-api.jsram.me/login', {
             method: 'POST',
-            headers: {"Content-Type": "application/json; charset=utf-8"},
-            // We convert the React state to JSON and send it as the POST body
+            headers: {
+                        "Content-Type": "application/json; charset=utf-8"
+                    },
             body: JSON.stringify(this.state)
             }).then(function(response) {
                 return response.json();
@@ -35,11 +36,11 @@ export default class Login extends React.Component {
                 <form onSubmit={this.handleSubmit}>
                     <label>
                         Email
-                    <input type="email" name="email" value={this.state.value} onChange={this.handleChange}></input>
+                    <input type="email" name="email" value={this.state.email} onChange={this.handleChange}></input>
                     </label>
                     <label>
                         Password
-                    <input type="password" name="password" value={this.state.value} onChange={this.handleChange}></input>
+                    <input type="password" name="password" value={this.state.password} onChange={this.handleChange}></input>
                     </label>
                     <input type="submit" value="Login" className="loginButton"></input>
                 </form>

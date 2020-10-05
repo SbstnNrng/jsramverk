@@ -11,7 +11,7 @@ export default class Register extends React.Component {
     }
     
     handleSubmit = (event) => {
-        fetch('http://localhost:1337/register', {
+        fetch('https://my-api.jsram.me/register', {
             method: 'POST',
             headers: {"Content-Type": "application/json; charset=utf-8"},
             // We convert the React state to JSON and send it as the POST body

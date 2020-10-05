@@ -13,7 +13,7 @@ class Reports extends React.Component {
     }
     
     handleSubmit = (event) => {
-        fetch('http://localhost:1337/reports', {
+        fetch('https://my-api.jsram.me/reports', {
             method: 'POST',
             headers: {
                 "Content-Type": "application/json; charset=utf-8",
@@ -22,7 +22,7 @@ class Reports extends React.Component {
             // We convert the React state to JSON and send it as the POST body
             body: JSON.stringify(this.state),
             }).then(function(response) {
-            return response.json();
+                return response.json();
             });
 
         event.preventDefault();
