@@ -27,20 +27,20 @@ test.describe("My-App", function() {
 
 
     async function goToNavLink(target) {
-        await browser.findElement(By.linkText(target)).then(function(element) {
-            element.click();
+        await browser.findElement(By.linkText(target)).then(async function(element) {
+            await element.click();
         });
     }
 
    async function matchUrl(target) {
-        await browser.getCurrentUrl().then(function(url) {
-            assert.ok(url.endsWith("localhost:8082/" + target));
+        await browser.getCurrentUrl().then(async function(url) {
+            await assert.ok(url.endsWith("localhost:8082/" + target));
         });
     }
 
     async function assertH2(target) {
-        await browser.findElement(By.css("h2")).then(function(element) {
-            element.getText().then(function(text) {
+        await browser.findElement(By.css("h2")).then(async function(element) {
+            await element.getText().then(function(text) {
                 assert.equal(text, target);
             });
         });
