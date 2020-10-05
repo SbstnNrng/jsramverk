@@ -16,7 +16,7 @@ test.describe("My-App", function() {
         browser = new webdriver.Builder().
             withCapabilities(webdriver.Capabilities.firefox()).build();
 
-        browser.get("http://localhost:3000/");
+        browser.get("http://me.jsram.me/");
         done();
     });
 
@@ -34,7 +34,7 @@ test.describe("My-App", function() {
 
     function matchUrl(target) {
         browser.getCurrentUrl().then(function(url) {
-            assert.ok(url.endsWith("localhost:3000/" + target));
+            assert.ok(url.endsWith("me.jsram.me/" + target));
         });
     }
 
