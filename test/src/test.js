@@ -11,65 +11,65 @@ const By = webdriver.By;
 let browser;
 
 test.describe("My-App", function() {
-    test.beforeEach(function(done) {
+    test.beforeEach(async function(done) {
         this.timeout(200000);
-        browser = new webdriver.Builder().
+        browser = await new webdriver.Builder().
             withCapabilities(webdriver.Capabilities.firefox()).build();
 
-        browser.get("http://localhost:8082/");
-        done();
+        await browser.get("http://localhost:8082/");
+        await done();
     });
 
-    test.afterEach(function(done) {
-        browser.quit();
-        done();
+    test.afterEach(async function(done) {
+        await browser.quit();
+        await done();
     });
 
 
-    function goToNavLink(target) {
-        browser.findElement(By.linkText(target)).then(function(element) {
+    async function goToNavLink(target) {
+        await browser.findElement(By.linkText(target)).then(function(element) {
             element.click();
         });
     }
 
-    function matchUrl(target) {
-        browser.getCurrentUrl().then(function(url) {
+   async function matchUrl(target) {
+        await browser.getCurrentUrl().then(function(url) {
             assert.ok(url.endsWith("localhost:8082/" + target));
         });
     }
 
-    function assertH2(target) {
-        browser.findElement(By.css("h2")).then(function(element) {
+    async function assertH2(target) {
+        await browser.findElement(By.css("h2")).then(function(element) {
             element.getText().then(function(text) {
                 assert.equal(text, target);
             });
         });
     }
 
-    test.it("Test go to Login", function(done) {
+    test.it("Test go to Login", async function(done) {
         goToNavLink("Login");
 
         assertH2("Login");
         matchUrl("login" );
 
-        done();
+        await done();
     });
 
-    test.it("Test go to Register", function(done) {
+    test.it("Test go to Register", async function(done) {
         goToNavLink("Register");
 
         assertH2("Register");
         matchUrl("register" );
 
-        done();
+        await done();
     });
 
-    test.it("Test go to Me", function(done) {
+    test.it("Test go to Me", async function(done) {
         goToNavLink("Me");
 
         assertH2("Om mig");
         matchUrl("");
 
-        done();
+        await done();
     });
 });
