@@ -12,7 +12,7 @@ let browser;
 
 test.describe("My-App", function() {
     test.beforeEach(async function(done) {
-        this.timeout(200000);
+        await this.timeout(200000);
         browser = await new webdriver.Builder().
             withCapabilities(webdriver.Capabilities.firefox()).build();
 
