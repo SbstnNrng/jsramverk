@@ -10,6 +10,7 @@ git:
     submodules: false
 
 before_script:
+    - npm start
     - npm install
 
 script:
