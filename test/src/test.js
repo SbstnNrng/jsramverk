@@ -7,7 +7,7 @@ const assert = require("assert");
 const test = require("selenium-webdriver/testing");
 const webdriver = require("selenium-webdriver");
 const By = webdriver.By;
-require('geckodriver');
+const gecko = require('geckodriver');
 
 let browser;
 
@@ -15,7 +15,7 @@ test.describe("My-App", async function() {
     test.beforeEach(async function(done) {
         this.timeout(200000);
         browser = await new webdriver.Builder().
-            withCapabilities(webdriver.Capabilities.firefox()).build();
+            withCapabilities(webdriver.Capabilities.firefox(gecko)).build();
 
         await browser.get("http://localhost:8082/");
         await done();
