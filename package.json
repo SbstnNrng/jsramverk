@@ -16,7 +16,7 @@
     "react-scripts": "3.4.3"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "node node_modules/http-server/bin/http-server -p 8082 build",
     "build": "react-scripts build",
     "test": "mocha 'test/**/*.js'",
     "eject": "react-scripts eject",

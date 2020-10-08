@@ -20,7 +20,7 @@ test.describe("My-App",function() {
             .forBrowser('firefox')
             .build();
 
-        browser.get("http://localhost:3000/");
+        browser.get("http://localhost:8082/");
         done();
     });
 
@@ -39,7 +39,7 @@ test.describe("My-App",function() {
 
    function matchUrl(target) {
         browser.getCurrentUrl().then(function(url) {
-            assert.ok(url.endsWith("localhost:3000/" + target));
+            assert.ok(url.endsWith("localhost:8082/" + target));
         });
     }
 
