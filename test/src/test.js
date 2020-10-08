@@ -7,6 +7,7 @@ const assert = require("assert");
 const test = require("selenium-webdriver/testing");
 const webdriver = require("selenium-webdriver");
 const By = webdriver.By;
+require('geckodriver');
 
 let browser;
 
