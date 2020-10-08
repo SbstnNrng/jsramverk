@@ -11,8 +11,8 @@ git:
 
 before_script:
     - npm install
-    - npm start
     - npm run build
+    - npm start
 
 script:
     - npm test
