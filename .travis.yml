@@ -14,7 +14,7 @@ before_script:
     - npm run build
 
 script:
-    - npm start | npm test
+    - npm start & npm test
 
 after_success:
     - npm run report-coveralls
