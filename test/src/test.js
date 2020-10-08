@@ -12,7 +12,7 @@ const gecko = require('geckodriver');
 let browser;
 
 test.describe("My-App",function() {
-    test.beforeEach(function(done) {
+    beforeEach(function(done) {
         this.timeout(200000);
         browser = new webdriver.Builder().
             withCapabilities(webdriver.Capabilities.firefox(gecko)).build();
@@ -21,7 +21,7 @@ test.describe("My-App",function() {
         done();
     });
 
-    test.afterEach(function(done) {
+    afterEach(function(done) {
         this.timeout(200000);
         browser.quit();
         done();
