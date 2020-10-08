@@ -11,67 +11,67 @@ const gecko = require('geckodriver');
 
 let browser;
 
-test.describe("My-App", async function() {
-    test.beforeEach(async function(done) {
+test.describe("My-App",function() {
+    test.beforeEach(function(done) {
         this.timeout(200000);
-        browser = await new webdriver.Builder().
+        browser = new webdriver.Builder().
             withCapabilities(webdriver.Capabilities.firefox(gecko)).build();
 
-        await browser.get("http://localhost:8082/");
-        await done();
+        browser.get("http://localhost:8082/");
+        done();
     });
 
-    test.afterEach(async function(done) {
-        await this.timeout(200000);
-        await browser.quit();
-        await done();
+    test.afterEach(function(done) {
+        this.timeout(200000);
+        browser.quit();
+        done();
     });
 
 
-    async function goToNavLink(target) {
-        await browser.findElement(By.linkText(target)).then(async function(element) {
-            await element.click();
+    function goToNavLink(target) {
+        browser.findElement(By.linkText(target)).then(function(element) {
+            element.click();
         });
     }
 
-   async function matchUrl(target) {
-        await browser.getCurrentUrl().then(async function(url) {
-            await assert.ok(url.endsWith("localhost:8082/" + target));
+   function matchUrl(target) {
+        browser.getCurrentUrl().then(function(url) {
+            assert.ok(url.endsWith("localhost:8082/" + target));
         });
     }
 
-    async function assertH2(target) {
-        await browser.findElement(By.css("h2")).then(async function(element) {
-            await element.getText().then(async function(text) {
+    function assertH2(target) {
+        browser.findElement(By.css("h2")).then(function(element) {
+            element.getText().then(function(text) {
                 assert.equal(text, target);
             });
         });
     }
 
-    test.it("Test go to Login", async function(done) {
-        await goToNavLink("Login");
+    test.it("Test go to Login", function(done) {
+        goToNavLink("Login");
 
-        await assertH2("Login");
-        await matchUrl("login" );
+        assertH2("Login");
+        matchUrl("login" );
 
-        await done();
+        done();
     });
 
-    test.it("Test go to Register", async function(done) {
-        await goToNavLink("Register");
+    test.it("Test go to Register", function(done) {
+        goToNavLink("Register");
 
-        await assertH2("Register");
-        await matchUrl("register" );
+        assertH2("Register");
+        matchUrl("register" );
 
-        await done();
+        done();
     });
 
-    test.it("Test go to Me", async function(done) {
-        await goToNavLink("Me");
+    test.it("Test go to Me", function(done) {
+        goToNavLink("Me");
 
-        await assertH2("Om mig");
-        await matchUrl("");
+        assertH2("Om mig");
+        matchUrl("");
 
-        await done();
+        done();
     });
 });
