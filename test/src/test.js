@@ -7,21 +7,24 @@ const assert = require("assert");
 const test = require("selenium-webdriver/testing");
 const webdriver = require("selenium-webdriver");
 const By = webdriver.By;
-const gecko = require('geckodriver');
+const firefox = require('selenium-webdriver/firefox')
 
 let browser;
 
 test.describe("My-App",function() {
-    beforeEach(function(done) {
+    test.beforeEach(function(done) {
         this.timeout(200000);
-        browser = new webdriver.Builder().
-            withCapabilities(webdriver.Capabilities.firefox(gecko)).build();
+        browser = new webdriver.Builder()
+            .withCapabilities(webdriver.Capabilities.firefox())
+            .setFirefoxOptions(new firefox.Options().headless())
+            .forBrowser('firefox')
+            .build();
 
-        browser.get("http://localhost:8082/");
+        browser.get("http://localhost:3000/");
         done();
     });
 
-    afterEach(function(done) {
+    test.afterEach(function(done) {
         this.timeout(200000);
         browser.quit();
         done();
@@ -36,7 +39,7 @@ test.describe("My-App",function() {
 
    function matchUrl(target) {
         browser.getCurrentUrl().then(function(url) {
-            assert.ok(url.endsWith("localhost:8082/" + target));
+            assert.ok(url.endsWith("localhost:3000/" + target));
         });
     }
 
