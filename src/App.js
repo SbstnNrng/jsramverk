@@ -6,6 +6,7 @@ import Register from './views/register.js';
 import me from './views/me.js';
 import Reports from './views/reports.js';
 import Edit from './views/edit.js';
+import Chat from './views/chat.js';
 import week01 from './views/week01.js';
 import week02 from './views/week02.js';
 import week03 from './views/week03.js';
@@ -36,6 +37,9 @@ class App extends React.Component {
                         <Link to="/edit">Edit Reports</Link>
                         </li>
                         <li>
+                        <Link to="/chat">Chat</Link>
+                        </li>
+                        <li>
                         <Link to="/reports/week/1">kmom1</Link>
                         </li>
                         <li>
@@ -54,6 +58,7 @@ class App extends React.Component {
                     <Route exact path="/" component={me} />
                     <Route exact path="/reports" component={Reports} />
                     <Route exact path="/edit" component={Edit} />
+                    <Route exact path="/chat" component={Chat} />
                     <Route exact path="/reports/week/1" component={week01} />
                     <Route exact path="/reports/week/2" component={week02} />
                     <Route exact path="/reports/week/3" component={week03} />

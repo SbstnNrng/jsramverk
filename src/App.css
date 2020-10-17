@@ -125,3 +125,44 @@ select {
     display: block;
     margin-bottom: 1rem;
 }
+
+.areaChat {
+    min-height: 6rem;
+    width: 40rem;
+    resize: none;
+    margin-bottom: 1rem;
+    display: block;
+    padding: 1rem;
+}
+
+.chatWindow {
+    display: block;
+    height: 25rem;
+    width: 40rem;
+    border: black 2px;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    background-color: whitesmoke;
+    overflow:scroll;
+    padding: 1rem;
+}
+
+.txtMsg {
+    font-size: 14px;
+    margin-bottom: 0.5rem;
+}
+
+.enterChat {
+    display: block;
+    margin-top: 2rem;
+}
+
+.enterChat label{
+    display: block;
+    margin-top: 2rem;
+}
+
+.enterChat input{
+    display: block;
+    margin-bottom: 2rem;
+}
