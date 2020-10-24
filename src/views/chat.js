@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import io from "socket.io-client";
-const ENDPOINT = "https://chat.jsram.me";
+const ENDPOINT = "http://localhost:3000";
 var chatSocket = io(ENDPOINT);
 
 const Chat = () => {
@@ -37,10 +37,11 @@ const Chat = () => {
         setAllMessages(oldMsgs => [...oldMsgs, message]);
     }
 
-    function sendMessage(ev) {
+    async function sendMessage(ev) {
         ev.preventDefault();
+        var msgStr = timeStamp + " " + nick + ": " + newMessage;
         const messageObject = {
-            body: (timeStamp + " " + nick + ": " + newMessage)
+            body: (msgStr)
         };
 
         setNewMessage("");
