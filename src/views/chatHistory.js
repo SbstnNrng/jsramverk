@@ -6,7 +6,7 @@ class ChatLog extends React.Component {
     };
 
     async componentDidMount() {
-        const url = "http://localhost:3000/old";
+        const url = "https://chat.jsram.me/old";
         const response = await fetch(url);
         const result = await response.json();
 
